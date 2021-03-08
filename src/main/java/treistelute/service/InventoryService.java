@@ -1,11 +1,12 @@
 package treistelute.service;
 
-import treistelute.model.*;
-import treistelute.repository.InventoryRepository;
 import javafx.collections.ObservableList;
+
 import treistelute.model.InhousePart;
 import treistelute.model.OutsourcedPart;
+import treistelute.model.Part;
 import treistelute.model.Product;
+
 import treistelute.repository.InventoryRepository;
 
 public class InventoryService {

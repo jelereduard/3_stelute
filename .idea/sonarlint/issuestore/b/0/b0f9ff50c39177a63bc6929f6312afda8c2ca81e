@@ -1,0 +1,21 @@
+
+Q	java:S125t"<This block of commented-out lines of code should be removed.( ÆüÖ
+q
+java:S1450 "[Remove the "errorMessage" field and declare it as a local variable in the relevant methods.(ÊÃ‘æ
+O	java:S106¡"9Replace this use of System.out or System.err by a logger.(§ª¬
+T	java:S106¤"9Replace this use of System.out or System.err by a logger.(ùÿèÁøÿÿÿÿ
+j
+java:S1450"TRemove the "scene" field and declare it as a local variable in the relevant methods.(‹ôÒ¡
+p
+java:S1450""URemove the "partId" field and declare it as a local variable in the relevant methods.(•›™âıÿÿÿÿ
+D
+java:S1125Â"(Remove the literal "true" boolean value.(ÿÂóéüÿÿÿÿ
+o
+java:S1450"TRemove the "stage" field and declare it as a local variable in the relevant methods.(‹ğÑœıÿÿÿÿ
+V
+java:S1117°":Rename "partId" which hides the field declared at line 34.(ÂçšÇúÿÿÿÿ
+T	java:S106Ë"9Replace this use of System.out or System.err by a logger.(Ï³Ìùÿÿÿÿ
+E
+java:S1068""*Remove this unused "partId" private field.(•›™âıÿÿÿÿ
+6
+java:S2129 " Remove this "String" constructor(ÊÃ‘æ

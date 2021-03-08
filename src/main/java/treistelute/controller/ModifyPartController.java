@@ -65,8 +65,6 @@ public class ModifyPartController implements Initializable, Controller {
     @FXML
     private TextField minTxt;
 
-    public ModifyPartController(){}
-
     public void setService(InventoryService service){
         this.service=service;
         fillWithData();
@@ -102,7 +100,7 @@ public class ModifyPartController implements Initializable, Controller {
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-
+        // metoda neutilizata
     }
 
     /**
@@ -159,7 +157,7 @@ public class ModifyPartController implements Initializable, Controller {
         alert.setHeaderText("Confirm Cancellation");
         alert.setContentText("Are you sure you want to cancel modifying part " + nameTxt.getText() + "?");
         Optional<ButtonType> result = alert.showAndWait();
-        if(result.get() == ButtonType.OK) {
+        if(result.isPresent() && result.get() == ButtonType.OK) {
             System.out.println("Ok selected. Part modification cancelled.");
             displayScene(event, "/fxml/MainScreen.fxml");
         } else {

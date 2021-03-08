@@ -172,7 +172,7 @@ public class ModifyProductController implements Initializable, Controller {
         alert.setContentText("Are you sure you want to delete part " + part.getName() + " from parts?");
         Optional<ButtonType> result = alert.showAndWait();
 
-        if (result.get() == ButtonType.OK) {
+        if(result.isPresent() && result.get() == ButtonType.OK) {
             System.out.println("Part deleted.");
             addParts.remove(part);
         } else {
@@ -206,7 +206,7 @@ public class ModifyProductController implements Initializable, Controller {
         alert.setHeaderText("Confirm Cancelation");
         alert.setContentText("Are you sure you want to cancel modifying product?");
         Optional<ButtonType> result = alert.showAndWait();
-        if(result.get() == ButtonType.OK) {
+        if(result.isPresent() && result.get() == ButtonType.OK) {
             System.out.println("Ok selected. Product modification canceled.");
             displayScene(event, "/fxml/MainScreen.fxml");
         } else {
