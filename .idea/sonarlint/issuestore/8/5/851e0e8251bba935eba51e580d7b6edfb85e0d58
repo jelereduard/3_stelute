@@ -1,13 +1,13 @@
 
-U
-java:S1155Œ">Use isEmpty() to check whether the collection is empty or not.(ƒ·»Â
-<
-java:S2129b"!Remove this "Integer" constructor(ƒ®øÿÿÿÿÿ
 J
 java:S1874b"/Remove this use of "Integer"; it is deprecated.(ƒ®øÿÿÿÿÿ
+™
+java:S1158b"~Call the static method Integer.toString(...) instead of instantiating a temporary object to perform this to string conversion.(ƒ®øÿÿÿÿÿ
+U
+java:S1155Œ">Use isEmpty() to check whether the collection is empty or not.(ƒ·»Â
 :
 java:S2131b"Use "Integer.toString" instead.(ƒ®øÿÿÿÿÿ
 V	java:S125
 "<This block of commented-out lines of code should be removed.(îÌ¹üÿÿÿÿ
-™
-java:S1158b"~Call the static method Integer.toString(...) instead of instantiating a temporary object to perform this to string conversion.(ƒ®øÿÿÿÿÿ
+<
+java:S2129b"!Remove this "Integer" constructor(ƒ®øÿÿÿÿÿ

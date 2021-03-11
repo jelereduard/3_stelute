@@ -27,3 +27,9 @@ n
 >src/main/java/treistelute/controller/MainScreenController.java,f\1\f15a0f793fe0c521cb4de774261598d4249edf09
 n
 >src/main/java/treistelute/controller/ModifyPartController.java,b\0\b0f9ff50c39177a63bc6929f6312afda8c2ca81e
+S
+#.idea/sonarlint/issuestore/index.pb,9\f\9fe84ebb15faf917b7def6236dba604453cc61e0
+Q
+!src/main/resources/data/items.txt,3\7\37354ebab069b75d30b44e7e4fb6f571626dc977
+M
+target/classes/data/items.txt,8\3\83a1017694e1f9eb9e9d9f8ecf57ab391bda3ca8

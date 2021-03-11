@@ -1,12 +1,12 @@
 
 o
 java:S1450"TRemove the "stage" field and declare it as a local variable in the relevant methods.(‹ğÑœıÿÿÿÿ
-T	java:S106™"9Replace this use of System.out or System.err by a logger.(½ğöÈıÿÿÿÿ
-T	java:S106Û"9Replace this use of System.out or System.err by a logger.(Éâ…ºıÿÿÿÿ
-O	java:S106¯"9Replace this use of System.out or System.err by a logger.(¤Õï«
-q
-java:S1450"[Remove the "errorMessage" field and declare it as a local variable in the relevant methods.(®Ãê
-T	java:S106–"9Replace this use of System.out or System.err by a logger.(ò¤áÿûÿÿÿÿ
 j
 java:S1450"TRemove the "scene" field and declare it as a local variable in the relevant methods.(‹ôÒ¡
 T	java:S106¬"9Replace this use of System.out or System.err by a logger.(ñ¢©·şÿÿÿÿ
+O	java:S106¯"9Replace this use of System.out or System.err by a logger.(¤Õï«
+T	java:S106™"9Replace this use of System.out or System.err by a logger.(½ğöÈıÿÿÿÿ
+T	java:S106Û"9Replace this use of System.out or System.err by a logger.(Éâ…ºıÿÿÿÿ
+q
+java:S1450"[Remove the "errorMessage" field and declare it as a local variable in the relevant methods.(®Ãê
+T	java:S106–"9Replace this use of System.out or System.err by a logger.(ò¤áÿûÿÿÿÿ

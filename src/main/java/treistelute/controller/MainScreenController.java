@@ -127,21 +127,37 @@ public class MainScreenController implements Initializable,Controller {
      */
     @FXML
     void handleDeletePart(ActionEvent event) {
-        Part part = partsTableView.getSelectionModel().getSelectedItem();
 
-        Alert alert = new Alert(AlertType.CONFIRMATION);
-        alert.initModality(Modality.NONE);
-        alert.setTitle("Confirmation");
-        alert.setHeaderText("Confirm Part Deletion?");
-        alert.setContentText("Are you sure you want to delete part " + part.getName() + " from parts?");
-        Optional<ButtonType> result = alert.showAndWait();
+        try {
 
-        if(result.isPresent() && result.get() == ButtonType.OK) {
-            System.out.println("Part deleted.");
-            service.deletePart(part);
-        } else {
-            System.out.println("Canceled part deletion.");
+            partsTableView.getSelectionModel().getSelectedItem();
+        }catch (NullPointerException e){
+            Alert alert = new Alert(AlertType.CONFIRMATION);
+            alert.initModality(Modality.NONE);
+            alert.setTitle("No part selected");
+            alert.setHeaderText("No part selected");
+            alert.setContentText("No part selected");
+            alert.showAndWait();
+            return;
         }
+
+        Part part = partsTableView.getSelectionModel().getSelectedItem();
+            Alert alert = new Alert(AlertType.CONFIRMATION);
+            alert.initModality(Modality.NONE);
+            alert.setTitle("Confirmation");
+            alert.setHeaderText("Confirm Part Deletion?");
+
+            if(part.getName()==null)throw new NullPointerException();
+            alert.setContentText("Are you sure you want to delete part " + part.getName() + " from parts?");
+            Optional<ButtonType> result = alert.showAndWait();
+
+            if(result.isPresent() && result.get() == ButtonType.OK) {
+                System.out.println("Part deleted.");
+                service.deletePart(part);
+            } else {
+                System.out.println("Canceled part deletion.");
+            }
+
     }
 
     /**

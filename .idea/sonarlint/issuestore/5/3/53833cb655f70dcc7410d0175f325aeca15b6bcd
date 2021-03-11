@@ -1,12 +1,12 @@
 
-N	java:S106m"9Replace this use of System.out or System.err by a logger.(¤Õï«
 T	java:S106©"9Replace this use of System.out or System.err by a logger.(Éâ…ºıÿÿÿÿ
-D
-java:S1125 "(Remove the literal "true" boolean value.(ÿÂóéüÿÿÿÿ
+N	java:S106m"9Replace this use of System.out or System.err by a logger.(¤Õï«
+j
+java:S1450"TRemove the "scene" field and declare it as a local variable in the relevant methods.(‹ôÒ¡
 o
 java:S1450"TRemove the "stage" field and declare it as a local variable in the relevant methods.(‹ğÑœıÿÿÿÿ
 S	java:S106j"9Replace this use of System.out or System.err by a logger.(©²²éúÿÿÿÿ
+D
+java:S1125 "(Remove the literal "true" boolean value.(ÿÂóéüÿÿÿÿ
 q
 java:S1450"[Remove the "errorMessage" field and declare it as a local variable in the relevant methods.(®Ãê
-j
-java:S1450"TRemove the "scene" field and declare it as a local variable in the relevant methods.(‹ôÒ¡
