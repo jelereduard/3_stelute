@@ -33,3 +33,11 @@ Q
 !src/main/resources/data/items.txt,3\7\37354ebab069b75d30b44e7e4fb6f571626dc977
 M
 target/classes/data/items.txt,8\3\83a1017694e1f9eb9e9d9f8ecf57ab391bda3ca8
+l
+<src/main/java/treistelute/model/validator/PartValidator.java,d\b\db2bea0d84f1957a3a517940049c2eaaa614bf88
+o
+?src/main/java/treistelute/model/validator/ProductValidator.java,a\7\a7c08778b67abb5bf3ccb61b75fd161dab5295b2
+r
+Bsrc/main/java/treistelute/model/validator/ValidationException.java,4\5\456e93c18bf56c3f451b92ecace95124513bb40f
+h
+8src/main/java/treistelute/model/validator/Validator.java,4\a\4a9810b655ba795f407ff828e28f79063e2ca1bb

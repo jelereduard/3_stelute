@@ -49,9 +49,8 @@ public class Inventory {
             if(p.getName().contains(searchItem) || (p.getProductId()+"").equals(searchItem)) return p;
             isFound = true;
         }
-        if(isFound == false) {
-            Product product = new Product(0, null, 0.0, 0, 0, 0, null);
-            return product;
+        if(!isFound) {
+            return new Product(0, null, 0.0, 0, 0, 0, null);
         }
         return null;
     }
@@ -98,12 +97,14 @@ public class Inventory {
      * @param searchItem
      * @return 
      */
-    public Part lookupPart(String searchItem) {
-        for(Part p:allParts) {
-            if(p.getName().contains(searchItem) || (p.getPartId()+"").equals(searchItem)) return p;
+    public Part lookupPart(String searchItem) { //_____________ 1
+        for(Part p:allParts) { // _____________________________ 2
+            if(p.getName().contains(searchItem) || // _________ 3
+                    (p.getPartId()+"").equals(searchItem)) //__
+                return p; // __________________________________ 4
         }
-        return null;
-    }
+        return null; // _______________________________________ 5
+    } // ______________________________________________________ 6
     
     /**
      * Update part at given index

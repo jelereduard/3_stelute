@@ -172,6 +172,8 @@ public class AddPartController implements Initializable, Controller {
             alert.setHeaderText("Error!");
             alert.setContentText("Form contains blank field.");
             alert.showAndWait();
+        } catch (Exception e) {
+            e.printStackTrace();
         }
     }
 
