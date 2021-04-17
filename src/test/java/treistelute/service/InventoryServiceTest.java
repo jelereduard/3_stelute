@@ -1,6 +1,9 @@
 package treistelute.service;
 
 import org.junit.jupiter.api.*;
+import treistelute.model.Inventory;
+import treistelute.model.Part;
+import treistelute.model.Product;
 import treistelute.repository.InventoryRepository;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
@@ -16,6 +19,16 @@ class InventoryServiceTest {
     void setUp(){
         inventoryRepository = new InventoryRepository();
         inventoryService = new InventoryService(inventoryRepository);
+    }
+
+    @Test
+    void addInhousePart() throws Exception {
+        addInhousePart_BVA_success1();
+        addInhousePart_ECP_success1();
+        addInhousePart_MinIsGreaterThanMax_fail();
+        addInhousePart_MinIsLessThanZero_fail();
+        addInhousePart_PriceIsZero_fail();
+        addInhousePart_StockIsLessThanMin_fail();
     }
 
     @Test
@@ -83,7 +96,7 @@ class InventoryServiceTest {
     @DisplayName("Adaugare BVA Valid 2")
     void addInhousePart_BVA_success2() throws Exception {
         int size = inventoryRepository.getAllParts().size();
-        inventoryService.addInhousePart("BVA1",1.1,1,0,1,132);
+        inventoryService.addInhousePart("BVA2",1.1,1,0,1,132);
         assert(size+1 == inventoryRepository.getAllParts().size());
     }
     @Disabled
@@ -99,10 +112,22 @@ class InventoryServiceTest {
     @DisplayName("Adaugare BVA Non Valid 2")
     void addInhousePart_MinIsLessThanZero_fail(){
         try {
-            inventoryService.addInhousePart("fail1",10.0,2,-1,10,132);
+            inventoryService.addInhousePart("fail2",10.0,2,-1,10,132);
         }catch (Exception ex){
             System.out.println(ex.getMessage());
             assert(ex.getMessage().equals("The Min value must be at least 0. "));
         }
+    }
+
+    @Test
+    @DisplayName("Cautarea uni parti")
+    void lookupProduct(){
+        String name = "";
+        Inventory inventory = inventoryRepository.getInventory();
+        Product product = inventory.lookupProduct(name);
+        if(product != null)
+            System.out.println(product);
+        else
+            System.out.println("No product was found");
     }
 }

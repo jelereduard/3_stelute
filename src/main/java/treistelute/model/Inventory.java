@@ -44,16 +44,28 @@ public class Inventory {
      * @return 
      */
     public Product lookupProduct(String searchItem) {
-        boolean isFound = false;
-        for(Product p: products) {
-            if(p.getName().contains(searchItem) || (p.getProductId()+"").equals(searchItem)) return p;
-            isFound = true;
+        boolean isFound = false;  //_______________ 1
+
+        if(!searchItem.equals("")) {  //_______________ 2
+
+            for (Product p : products) { //______________ 3
+
+                if (p.getName().contains(searchItem) ||  //________ 4
+                        (p.getProductId() + "").equals(searchItem)) //____|
+                    return p;   //_________________ 5
+
+                isFound = true; //_________________
+            }
+
+            if (!isFound) {  //__________________ 6
+
+                Product product = new Product(0, null,
+                        0.0, 0, 0, 0, null);
+                return product;   //_______________ 7
+            }
         }
-        if(!isFound) {
-            return new Product(0, null, 0.0, 0, 0, 0, null);
-        }
-        return null;
-    }
+        return null;       //__________________ 8
+    }       //_______________________ 9
     
     /**
      * Update product at given index
@@ -97,14 +109,14 @@ public class Inventory {
      * @param searchItem
      * @return 
      */
-    public Part lookupPart(String searchItem) { //_____________ 1
-        for(Part p:allParts) { // _____________________________ 2
-            if(p.getName().contains(searchItem) || // _________ 3
-                    (p.getPartId()+"").equals(searchItem)) //__
-                return p; // __________________________________ 4
+    public Part lookupPart(String searchItem) {
+        for(Part p:allParts) {
+            if(p.getName().contains(searchItem) ||
+                    (p.getPartId()+"").equals(searchItem))
+                return p;
         }
-        return null; // _______________________________________ 5
-    } // ______________________________________________________ 6
+        return null;
+    }
     
     /**
      * Update part at given index
