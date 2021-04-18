@@ -14,36 +14,34 @@ import static org.mockito.Mockito.mock;
 
 class InventoryServiceTestStep2 {
 
-    @Mock
-    InventoryRepository inventoryRepository;
+    private InventoryRepository inventoryRepository;
 
-    @InjectMocks
-    InventoryService inventoryService;
+    private InventoryService inventoryService;
 
     @BeforeEach
     void setUp() {
-        MockitoAnnotations.initMocks(this);
+        inventoryRepository = new InventoryRepository();
+        inventoryService = new InventoryService(inventoryRepository);
     }
 
     @Test
     void addPart_success(){
         InhousePart part = mock(InhousePart.class);
         Mockito.when(part.getPartId()).thenReturn(1);
-        Mockito.when(part.getName()).thenReturn("part");
+        Mockito.when(part.getName()).thenReturn("part_mock");
         Mockito.when(part.getPrice()).thenReturn(10.0);
         Mockito.when(part.getInStock()).thenReturn(2);
         Mockito.when(part.getMin()).thenReturn(1);
         Mockito.when(part.getMax()).thenReturn(3);
         Mockito.when(part.getMachineId()).thenReturn(11);
 
-        Mockito.when(inventoryRepository.lookupPart(part.getName())).thenReturn(part);
         try {
             inventoryService.addInhousePart(part);
         }catch (Exception e){
             System.out.println(e.getMessage());
         }
 
-        assertEquals(part,inventoryService.lookupPart("part"));
+        assertEquals(part.getName(),inventoryService.lookupPart("part_mock").getName());
     }
 
     @Test
@@ -58,7 +56,6 @@ class InventoryServiceTestStep2 {
         Mockito.when(part.getMachineId()).thenReturn(11);
 
         String expected_exception = "A name has not been entered. The price must be greater than 0. The Min value must be less than the Max value. Inventory level is lower than minimum value. Inventory level is higher than the maximum value. ";
-        Mockito.when(inventoryRepository.lookupPart(part.getName())).thenReturn(part);
         try {
             inventoryService.addInhousePart(part);
         }catch (Exception e){
