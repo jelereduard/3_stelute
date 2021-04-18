@@ -41,7 +41,7 @@ r
 Bsrc/main/java/treistelute/model/validator/ValidationException.java,4\5\456e93c18bf56c3f451b92ecace95124513bb40f
 h
 8src/main/java/treistelute/model/validator/Validator.java,4\a\4a9810b655ba795f407ff828e28f79063e2ca1bb
-]
--src/test/java/treistelute/model/PartTest.java,b\8\b8b5f8061f4082b522bbb656022f223e493e499e
 k
 ;src/test/java/treistelute/service/InventoryServiceTest.java,a\d\add5f3b2bf531d4ef06f73e7f7450d047b1a30b9
+b
+2src/test/java/treistelute/model/InventoryTest.java,3\8\38be968a7474c92e7bb37d20175541111e932e29

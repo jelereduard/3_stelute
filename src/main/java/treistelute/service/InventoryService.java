@@ -76,4 +76,11 @@ public class InventoryService {
         repo.deleteProduct(product);
     }
 
+    public void addInhousePart(InhousePart part) throws Exception {
+        addInhousePart(part.getName(),part.getPrice(),part.getInStock(),part.getMin(),part.getMax(),part.getMachineId());
+    }
+
+    public void addProduct(Product product) {
+        addProduct(product.getName(),product.getPrice(),product.getInStock(),product.getMin(),product.getMax(),product.getAssociatedParts());
+    }
 }
