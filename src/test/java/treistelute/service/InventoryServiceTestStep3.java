@@ -1,5 +1,6 @@
 package treistelute.service;
 
+import javafx.collections.FXCollections;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.mockito.InjectMocks;
@@ -12,9 +13,9 @@ import static org.junit.jupiter.api.Assertions.*;
 
 class InventoryServiceTestStep3 {
 
-    InventoryRepository inventoryRepository;
+    private InventoryRepository inventoryRepository;
 
-    InventoryService inventoryService;
+    private InventoryService inventoryService;
 
     @BeforeEach
     void setUp() {
@@ -24,7 +25,7 @@ class InventoryServiceTestStep3 {
 
     @Test
     void lookupProduct_success(){
-        Product product = new Product(1,"product_test_step3",10.0,2,1,3,null);
+        Product product = new Product(1,"product_test_step3",10.0,2,1,3, FXCollections.observableArrayList());
         inventoryService.addProduct(product);
         assertEquals(product.getName(),inventoryService.lookupProduct("product_test_step3").getName());
     }
