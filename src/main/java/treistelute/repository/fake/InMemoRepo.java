@@ -3,7 +3,6 @@ package treistelute.repository.fake;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import treistelute.model.*;
-import treistelute.repository.InventoryRepository;
 
 import java.io.*;
 import java.util.StringTokenizer;
@@ -14,7 +13,7 @@ public class InMemoRepo {
 
     public InMemoRepo(){
         this.inventory=new Inventory();
-
+        populate();
     }
 
     public void populate(){
@@ -23,7 +22,7 @@ public class InMemoRepo {
     }
 
     public void readParts(){
-        ClassLoader classLoader = InventoryRepository.class.getClassLoader();
+        ClassLoader classLoader = InMemoRepo.class.getClassLoader();
         File file = new File(classLoader.getResource(filename).getFile());
         ObservableList<Part> listP = FXCollections.observableArrayList();
         BufferedReader br = null;
@@ -75,7 +74,7 @@ public class InMemoRepo {
     }
 
     public void readProducts(){
-        ClassLoader classLoader = InventoryRepository.class.getClassLoader();
+        ClassLoader classLoader = InMemoRepo.class.getClassLoader();
         File file = new File(classLoader.getResource(filename).getFile());
 
         ObservableList<Product> listP = FXCollections.observableArrayList();
@@ -128,7 +127,7 @@ public class InMemoRepo {
 
     public void writeAll() {
 
-        ClassLoader classLoader = InventoryRepository.class.getClassLoader();
+        ClassLoader classLoader = InMemoRepo.class.getClassLoader();
         File file = new File(classLoader.getResource(filename).getFile());
 
         BufferedWriter bw = null;
